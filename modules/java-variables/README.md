@@ -13,9 +13,9 @@ Fill in these exactly as named — the checkpoints call them directly:
 - `double MAX_SPEED` — a `public static final` constant equal to `5.0`.
   Team standard: constants are `SCREAMING_SNAKE_CASE` and `final`.
 - An `enum` named `ALLIANCE` with two values, `RED` and `BLUE`. Define it
-  below the `Main` class in the same file (Java allows one `public` type per
-  file, but a plain `enum` alongside it is fine). Team standard: enum names
-  *and* their values are both `SCREAMING_SNAKE_CASE`.
+  as a nested type inside the `Main` class, not as its own top-level type -
+  it's only used by `Main`, so it belongs in `Main`. Team standard: enum
+  names *and* their values are both `SCREAMING_SNAKE_CASE`.
 
 ## Checking your work
 

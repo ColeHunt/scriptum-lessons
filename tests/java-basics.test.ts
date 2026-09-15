@@ -107,9 +107,9 @@ describe.skipIf(!hasJdk)("Java Basics checkpoints", () => {
 			`public class Main {
     public static int teamNumber() { int team_number = 4143; return team_number; }
     public static final double MAX_SPEED = 5.0;
+    enum ALLIANCE { RED, BLUE }
     public static void main(String[] args) {}
 }
-enum ALLIANCE { RED, BLUE }
 `,
 		);
 	});

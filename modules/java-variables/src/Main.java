@@ -6,9 +6,8 @@ public class Main {
 
     // TODO: define an enum named ALLIANCE with two values: RED and BLUE.
     // Team standard: both the enum name and its values are SCREAMING_SNAKE_CASE.
-    // Put it below this class (after the closing brace), not inside it -
-    // Java only allows one *public* type per file, but a plain (package-private)
-    // type is fine alongside it.
+    // Put it inside this class, as a nested type - not as its own top-level
+    // type below the class. It's used only by Main, so it belongs in Main.
 
     // TODO: declare a constant named MAX_SPEED holding 5.0.
     // Team standard: constants use the `final` keyword and SCREAMING_SNAKE_CASE.

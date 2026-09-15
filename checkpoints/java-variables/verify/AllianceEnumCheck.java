@@ -2,10 +2,12 @@ public class AllianceEnumCheck {
     public static void main(String[] args) {
         Class<?> allianceClass;
         try {
-            allianceClass = Class.forName("ALLIANCE");
+            // Nested inside Main, so its binary (compiled) name is Main$ALLIANCE,
+            // not a bare top-level ALLIANCE - see Main.java's TODO.
+            allianceClass = Class.forName("Main$ALLIANCE");
         } catch (ClassNotFoundException e) {
             System.out.println(
-                "No ALLIANCE type found. Define: enum ALLIANCE { RED, BLUE } "
+                "No ALLIANCE type found. Define it inside Main: enum ALLIANCE { RED, BLUE } "
                     + "(team standard: enum names are SCREAMING_SNAKE_CASE)."
             );
             System.exit(1);
