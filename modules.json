@@ -61,29 +61,42 @@
 		{
 			"id": "advantagescope-intro",
 			"title": "AdvantageScope: Reading Robot Telemetry",
-			"description": "Generate a telemetry log, then configure AdvantageScope's layout to display it.",
+			"description": "Publish live robot telemetry, then configure AdvantageScope's layout to display it.",
 			"subdir": "modules/advantagescope-intro",
-			"kind": "plain-java",
+			"kind": "robot",
 			"order": 7,
 			"track": "Tools",
-			"showScope": true,
 			"checkpoints": [
 				{
-					"id": "flywheel-rpm",
-					"title": "Flywheel RPM",
-					"description": "flywheelRpm(t) oscillates between 0 and 6000.",
+					"id": "flywheel-rpm-changes",
+					"title": "Flywheel RPM changes",
+					"description": "flywheelRpm(t) changes over time.",
 					"verifier": {
-						"type": "script",
-						"path": "checkpoints/advantagescope-intro/verify/flywheel-rpm.sh"
+						"type": "nt4-value",
+						"topic": "/AdvantageKit/RealOutputs/FlywheelRPM",
+						"check": "changes"
 					}
 				},
 				{
-					"id": "game-piece-loaded",
-					"title": "Game piece loaded",
+					"id": "flywheel-rpm-range",
+					"title": "Flywheel RPM in range",
+					"description": "flywheelRpm(t) stays between 0 and 6000.",
+					"verifier": {
+						"type": "nt4-value",
+						"topic": "/AdvantageKit/RealOutputs/FlywheelRPM",
+						"check": "range",
+						"min": 0.0,
+						"max": 6000.0
+					}
+				},
+				{
+					"id": "game-piece-loaded-toggles",
+					"title": "Game piece loaded toggles",
 					"description": "gamePieceLoaded(t) toggles as t changes.",
 					"verifier": {
-						"type": "script",
-						"path": "checkpoints/advantagescope-intro/verify/game-piece-loaded.sh"
+						"type": "nt4-value",
+						"topic": "/AdvantageKit/RealOutputs/GamePieceLoaded",
+						"check": "changes"
 					}
 				},
 				{
