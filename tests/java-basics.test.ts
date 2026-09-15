@@ -1,11 +1,11 @@
 // Compiles and runs each Java Basics checkpoint's hidden check class against
 // the real starter (expect every checkpoint to fail) and a known-solved
 // version of the same file (expect every checkpoint to pass) - the same
-// round trip CheckpointManager drives inside a CodeRunner workspace
+// round trip CheckpointManager drives inside a Scriptum workspace
 // container, using the host's own javac/java instead of Docker. Skipped
-// entirely when no JDK is on PATH. Ported from CodeRunner's
+// entirely when no JDK is on PATH. Ported from Scriptum's
 // scripts/lessons/java-basics.test.ts when these modules moved from the
-// bundled catalog to this repo - see CodeRunner's
+// bundled catalog to this repo - see Scriptum's
 // docs/decisions/044-remote-catalog-checkpoints.md.
 import { describe, expect, test } from "bun:test";
 import { cp, mkdtemp, rm, writeFile } from "node:fs/promises";

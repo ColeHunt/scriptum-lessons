@@ -6,7 +6,7 @@ simulation.
 
 ## Running it
 
-Click the **Run** button in the CodeRunner Driver Station to build and start the
+Click the **Run** button in the Scriptum Driver Station to build and start the
 robot in simulation. Telemetry shows up in AdvantageScope and the Driver Station
 panel as the robot runs.
 

@@ -1,12 +1,12 @@
 // Runs the git-basics lesson's setup + verify scripts against a real git
 // checkout on the host (no Docker needed) - the same round trip
-// CheckpointManager drives inside a CodeRunner workspace container, just
+// CheckpointManager drives inside a Scriptum workspace container, just
 // without the container. Confirms every checkpoint fails on the fresh
 // scenario and passes once solved with the exact git commands the lesson's
 // READMEs teach, which is what actually caught the sed/tag bugs while
-// authoring this lesson. Ported from CodeRunner's scripts/lessons/git-basics.test.ts
+// authoring this lesson. Ported from Scriptum's scripts/lessons/git-basics.test.ts
 // when git-basics moved from the bundled catalog to this repo - see
-// CodeRunner's docs/decisions/044-remote-catalog-checkpoints.md.
+// Scriptum's docs/decisions/044-remote-catalog-checkpoints.md.
 import { describe, expect, test } from "bun:test";
 import { cp, mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";

@@ -1,11 +1,11 @@
-# coderunner-lessons
+# scriptum-lessons
 
-A CodeRunner lessons catalog, served to a CodeRunner deployment by pointing
-its `LESSONS_CATALOG_REPO` environment variable at this repo — no CodeRunner
+A Scriptum lessons catalog, served to a Scriptum deployment by pointing
+its `LESSONS_CATALOG_REPO` environment variable at this repo — no Scriptum
 rebuild or redeploy needed to add or edit a lesson, just a commit here.
 
-See [Authoring Lesson Modules](https://github.com/mathewdunne/CodeRunner/blob/main/docs/lessons/authoring-modules.md)
-in the CodeRunner repo for the full schema reference this repo follows.
+See [Authoring Lesson Modules](https://github.com/ColeHunt/scriptum/blob/main/docs/lessons/authoring-modules.md)
+in the Scriptum repo for the full schema reference this repo follows.
 
 ## Layout
 
@@ -18,7 +18,7 @@ checkpoints/<id>/verify/   per-checkpoint verifier scripts
 
 ## What's here
 
-Two modules, ported from CodeRunner's own bundled `catalog/` as a worked
+Two modules, ported from Scriptum's own bundled `catalog/` as a worked
 example that both checkpoint-free and checkpoint-with-setup-script modules
 load and verify correctly from a remote repo:
 
@@ -29,9 +29,9 @@ load and verify correctly from a remote repo:
 
 ## Publishing
 
-1. Push this repo to GitHub (public, since CodeRunner's remote catalog
+1. Push this repo to GitHub (public, since Scriptum's remote catalog
    fetches over an unauthenticated `raw.githubusercontent.com` URL).
-2. On the CodeRunner control plane, set `LESSONS_CATALOG_REPO=<owner>/coderunner-lessons`
+2. On the Scriptum control plane, set `LESSONS_CATALOG_REPO=<owner>/scriptum-lessons`
    (and `LESSONS_CATALOG_BRANCH` if not using `main`).
-3. Commit and push changes here — CodeRunner caches the module list for 60
+3. Commit and push changes here — Scriptum caches the module list for 60
    seconds, so edits go live within about a minute.
