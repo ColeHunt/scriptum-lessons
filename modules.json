@@ -201,6 +201,44 @@
 			]
 		},
 		{
+			"id": "choreo-intro",
+			"title": "Choreo: Planning Autonomous Paths",
+			"description": "Build an autonomous path with real constraints and confirm it generates correctly.",
+			"subdir": "modules/choreo-intro",
+			"kind": "robot",
+			"order": 9,
+			"track": "Tools",
+			"checkpoints": [
+				{
+					"id": "has-waypoints",
+					"title": "Path has waypoints",
+					"description": "The path has at least two waypoints.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/choreo-intro/verify/has-waypoints.sh"
+					}
+				},
+				{
+					"id": "has-constraint",
+					"title": "Path has a constraint",
+					"description": "The path has at least one enabled constraint (Max Velocity, Max Angular Velocity, or Keep In Rectangle).",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/choreo-intro/verify/has-constraint.sh"
+					}
+				},
+				{
+					"id": "generates-successfully",
+					"title": "Path generates",
+					"description": "Choreo successfully solves the path into a trajectory.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/choreo-intro/verify/generates-successfully.sh"
+					}
+				}
+			]
+		},
+		{
 			"id": "hello-world",
 			"title": "Hello, World",
 			"description": "Basic java hello world project",
