@@ -76,9 +76,9 @@
   },
   "generationFeatures": [],
   "codegen": {
-    "root": "..\\..\\java\\frc\\robot\\autos",
-    "genVars": true,
-    "genTrajData": true,
+    "root": "",
+    "genVars": false,
+    "genTrajData": false,
     "useChoreoLib": true
   }
 }
