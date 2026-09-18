@@ -5,12 +5,14 @@ teams use to visualize robot telemetry - line graphs, 3D/2D fields, tables,
 and more.
 
 The robot code is already written and already publishing `FlywheelRPM` (an
-oscillating value), `GamePieceLoaded` (a toggling boolean), and a robot pose
-driving a figure-8 around the field (`RobotPose2d`/`RobotPose3d`) - this
-lesson is about the tool, not the code. Click **Start** in the Driver
-Station, choose a mode, and click **Enable**. Then open the **Scope** pane
-on the right - AdvantageScope reads *live* data here, the same way Elastic
-does, and connects automatically. No log file to open.
+oscillating value), `GamePieceLoaded` (a toggling boolean), a robot pose
+driving a figure-8 around the field (`RobotPose2d`/`RobotPose3d`), and swerve
+drive data for the same robot (`SwerveModuleStates`, `ChassisSpeeds`,
+`ChassisRotation`) - this lesson is about the tool, not the code. Click
+**Start** in the Driver Station, choose a mode, and click **Enable**. Then
+open the **Scope** pane on the right - AdvantageScope reads *live* data
+here, the same way Elastic does, and connects automatically. No log file
+to open.
 
 ## Using AdvantageScope
 
@@ -32,6 +34,11 @@ With the robot running:
    is why there are two separate topics publishing the same path.
 7. On the 3D Field, set the camera to **Orbit Robot** - it'll follow the
    robot around the figure-8 instead of staying fixed on the whole field.
+8. Add a **Swerve** tab and drag on three sources: **SwerveModuleStates**
+   (each of the four wheels' speed and angle), **ChassisSpeeds** (the
+   robot's overall forward/sideways/angular velocity), and
+   **ChassisRotation** (the robot's heading - the same one driving the
+   Field widgets above).
 
 ## Checking your work
 

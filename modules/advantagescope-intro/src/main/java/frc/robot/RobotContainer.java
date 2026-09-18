@@ -3,6 +3,8 @@ package frc.robot;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Pose3d;
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
+import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import org.littletonrobotics.junction.Logger;
@@ -38,6 +40,23 @@ public class RobotContainer {
     return new Pose2d(x, y, new Rotation2d(dx, dy));
   }
 
+  // Four swerve module states (FL, FR, BL, BR), phase-offset so each one
+  // spins and speeds up/down a little differently.
+  public static SwerveModuleState[] moduleStates(double t) {
+    return new SwerveModuleState[] {
+      new SwerveModuleState(2.0 + Math.sin(t), new Rotation2d(t)),
+      new SwerveModuleState(2.0 + Math.sin(t + Math.PI / 2), new Rotation2d(t + Math.PI / 2)),
+      new SwerveModuleState(2.0 + Math.sin(t + Math.PI), new Rotation2d(t + Math.PI)),
+      new SwerveModuleState(
+          2.0 + Math.sin(t + 3 * Math.PI / 2), new Rotation2d(t + 3 * Math.PI / 2))
+    };
+  }
+
+  // Robot-relative chassis speeds: forward, sideways, and angular.
+  public static ChassisSpeeds chassisSpeeds(double t) {
+    return new ChassisSpeeds(2.0 * Math.cos(t), 0.5 * Math.sin(t), Math.sin(0.5 * t));
+  }
+
   public RobotContainer() {
     timer.start();
   }
@@ -58,5 +77,12 @@ public class RobotContainer {
     Pose2d pose = robotPose(seconds);
     Logger.recordOutput("RobotPose2d", pose);
     Logger.recordOutput("RobotPose3d", new Pose3d(pose));
+
+    // For the Swerve tab: module states, chassis speeds, and the chassis's
+    // own rotation (reusing the same heading as the field pose above, so
+    // the Swerve view and the Field views agree).
+    Logger.recordOutput("SwerveModuleStates", moduleStates(seconds));
+    Logger.recordOutput("ChassisSpeeds", chassisSpeeds(seconds));
+    Logger.recordOutput("ChassisRotation", pose.getRotation());
   }
 }

@@ -120,6 +120,15 @@
 						"type": "script",
 						"path": "checkpoints/advantagescope-intro/verify/field3d-figure-eight.sh"
 					}
+				},
+				{
+					"id": "swerve-tab",
+					"title": "Swerve tab",
+					"description": "A Swerve tab plots module states, chassis speeds, and chassis rotation.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/advantagescope-intro/verify/swerve-tab.sh"
+					}
 				}
 			]
 		},
