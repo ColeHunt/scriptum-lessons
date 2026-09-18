@@ -67,7 +67,7 @@ public class RobotContainer {
   // A hex color that tracks gamePieceLoaded - green when loaded, red when not.
   // Single Color View expects a "#RRGGBB" string, not a Color object.
   public static String statusColorHex(double t) {
-    return gamePieceLoaded(t) ? "#00FF00" : "#FF0000";
+    return gamePieceLoaded(t) ? "#ebe712" : "#000000";
   }
 
   public RobotContainer() {
