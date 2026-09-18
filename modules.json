@@ -139,38 +139,6 @@
 			"track": "Tools",
 			"checkpoints": [
 				{
-					"id": "climber-speed-changes",
-					"title": "Climber speed changes",
-					"description": "climberSpeed(t) changes over time.",
-					"verifier": {
-						"type": "nt4-value",
-						"topic": "/AdvantageKit/RealOutputs/ClimberSpeed",
-						"check": "changes"
-					}
-				},
-				{
-					"id": "climber-speed-range",
-					"title": "Climber speed in range",
-					"description": "climberSpeed(t) stays between 0.0 and 1.0.",
-					"verifier": {
-						"type": "nt4-value",
-						"topic": "/AdvantageKit/RealOutputs/ClimberSpeed",
-						"check": "range",
-						"min": 0.0,
-						"max": 1.0
-					}
-				},
-				{
-					"id": "game-piece-loaded-toggles",
-					"title": "Game piece loaded toggles",
-					"description": "gamePieceLoaded(t) toggles as t changes.",
-					"verifier": {
-						"type": "nt4-value",
-						"topic": "/AdvantageKit/RealOutputs/GamePieceLoaded",
-						"check": "changes"
-					}
-				},
-				{
 					"id": "text-display-counter",
 					"title": "Counter text display",
 					"description": "A Text Display widget is bound to Counter.",

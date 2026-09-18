@@ -43,5 +43,5 @@ Elastic saves your layout automatically as you go.
 ## Checking your work
 
 Click **Checkpoints** in the top bar and run **Verify** whenever you want -
-the robot needs to be running for the live-data checkpoints to see anything.
-The layout checkpoints look at whatever you've saved in Elastic, any time.
+every checkpoint here looks at whatever you've saved in your Elastic layout,
+so they work any time, robot running or not.
