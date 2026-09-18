@@ -129,6 +129,16 @@
 						"type": "script",
 						"path": "checkpoints/advantagescope-intro/verify/swerve-tab.sh"
 					}
+				},
+				{
+					"id": "flywheel-target-rpm-tunable",
+					"title": "Tuned flywheel target",
+					"description": "FlywheelTargetRPM was written from AdvantageScope's Tuning Mode.",
+					"verifier": {
+						"type": "nt4-value",
+						"topic": "/AdvantageKit/RealOutputs/FlywheelTargetRPM",
+						"check": "changes"
+					}
 				}
 			]
 		},

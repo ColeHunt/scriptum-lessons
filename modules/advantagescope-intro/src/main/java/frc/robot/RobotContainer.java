@@ -8,6 +8,7 @@ import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import org.littletonrobotics.junction.Logger;
+import org.littletonrobotics.junction.networktables.LoggedNetworkNumber;
 
 /**
  * The robot's behavior lives here. {@link Robot} handles the AdvantageKit logging setup and calls
@@ -19,6 +20,13 @@ import org.littletonrobotics.junction.Logger;
  */
 public class RobotContainer {
   private final Timer timer = new Timer();
+
+  // A tunable value - unlike everything above, this one is meant to be
+  // *written* from AdvantageScope's Tuning Mode. Values published under
+  // "/Tuning" are the ones Tuning Mode will let you edit; nothing else
+  // qualifies.
+  private final LoggedNetworkNumber flywheelTargetRpm =
+      new LoggedNetworkNumber("/Tuning/FlywheelTargetRPM", 3000.0);
 
   // Oscillates between 0 and 6000 as t increases.
   public static double flywheelRpm(double t) {
@@ -70,6 +78,10 @@ public class RobotContainer {
 
     Logger.recordOutput("FlywheelRPM", flywheelRpm(seconds));
     Logger.recordOutput("GamePieceLoaded", gamePieceLoaded(seconds));
+
+    // Echoes back whatever the last Tuning Mode write set - confirms the
+    // round trip (write in AdvantageScope -> NT4 -> robot reads it here).
+    Logger.recordOutput("FlywheelTargetRPM", flywheelTargetRpm.get());
 
     // Published as both a 2D and a 3D pose - the 2D Field widget wants
     // Pose2d, the 3D Field widget wants Pose3d (Pose3d(Pose2d) lifts it to

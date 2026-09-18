@@ -6,13 +6,13 @@ and more.
 
 The robot code is already written and already publishing `FlywheelRPM` (an
 oscillating value), `GamePieceLoaded` (a toggling boolean), a robot pose
-driving a figure-8 around the field (`RobotPose2d`/`RobotPose3d`), and swerve
+driving a figure-8 around the field (`RobotPose2d`/`RobotPose3d`), swerve
 drive data for the same robot (`SwerveModuleStates`, `ChassisSpeeds`,
-`ChassisRotation`) - this lesson is about the tool, not the code. Click
-**Start** in the Driver Station, choose a mode, and click **Enable**. Then
-open the **Scope** pane on the right - AdvantageScope reads *live* data
-here, the same way Elastic does, and connects automatically. No log file
-to open.
+`ChassisRotation`), and one *writable* value, `/Tuning/FlywheelTargetRPM` -
+this lesson is about the tool, not the code. Click **Start** in the Driver
+Station, choose a mode, and click **Enable**. Then open the **Scope** pane
+on the right - AdvantageScope reads *live* data here, the same way Elastic
+does, and connects automatically. No log file to open.
 
 ## Using AdvantageScope
 
@@ -39,8 +39,16 @@ With the robot running:
    robot's overall forward/sideways/angular velocity), and
    **ChassisRotation** (the robot's heading - the same one driving the
    Field widgets above).
+9. Click the slider icon next to the search bar - it turns purple when
+   **Tuning Mode** is on. Find **FlywheelTargetRPM** in the sidebar (under
+   the **Tuning** table, not AdvantageKit) and type in a new value. Only
+   values published under `/Tuning` are editable this way - everything
+   else on this page is read-only, which is why `FlywheelTargetRPM` lives
+   there and the rest doesn't.
 
 ## Checking your work
 
-Click **Checkpoints** in the top bar and run **Verify** whenever you want -
-every checkpoint here looks at whatever you've configured in AdvantageScope.
+Click **Checkpoints** in the top bar and run **Verify** whenever you want.
+Most checkpoints here look at whatever you've configured in AdvantageScope;
+the tuning one needs the robot running and a value actually written through
+Tuning Mode.
