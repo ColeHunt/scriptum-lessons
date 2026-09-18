@@ -66,6 +66,7 @@
 			"kind": "robot",
 			"order": 7,
 			"track": "Tools",
+			"restrictTools": ["scope"],
 			"checkpoints": [
 				{
 					"id": "flywheel-graph",
@@ -150,6 +151,7 @@
 			"kind": "robot",
 			"order": 8,
 			"track": "Tools",
+			"restrictTools": ["elastic"],
 			"checkpoints": [
 				{
 					"id": "text-display-counter",
@@ -288,6 +290,7 @@
 			"kind": "robot",
 			"order": 9,
 			"track": "Tools",
+			"restrictTools": ["choreo"],
 			"checkpoints": [
 				{
 					"id": "has-waypoints",
