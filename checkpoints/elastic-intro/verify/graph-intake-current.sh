@@ -12,12 +12,13 @@ if jq -e '
 		.type == "Graph" and
 		((.properties.topic // "") | endswith("IntakeCurrentAmps")) and
 		(.properties.min_value == 0) and
-		(.properties.max_value == 45)
+		(.properties.max_value == 45) and
+		(.properties.color == 4294967295)
 	)
 ' "$LAYOUT" >/dev/null 2>&1; then
 	echo "Graph bound to IntakeCurrentAmps looks good."
 	exit 0
 fi
 
-echo "Add a Graph widget, bind it to IntakeCurrentAmps, and set its range to 0-45."
+echo "Add a Graph widget, bind it to IntakeCurrentAmps, set its range to 0-45, and set its Graph Color to pure white."
 exit 1

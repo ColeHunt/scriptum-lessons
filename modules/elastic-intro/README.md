@@ -27,7 +27,7 @@ from the tree on the left):
 | Number Bar | `ClimberSpeed` | Range 0-1 |
 | Voltage View | `BatteryVoltage` | Default range (4-13) is fine |
 | Radial Gauge | `GyroHeadingDegrees` | Min/Max Value 0/360, Start/End Angle 0/360 |
-| Graph | `IntakeCurrentAmps` | Min 0, Max 45 |
+| Graph | `IntakeCurrentAmps` | Min 0, Max 45, Graph Color pure white |
 | Match Time | `MatchTimeRemaining` | Red Start Time 15, Yellow Start Time 45 |
 | Boolean Box | `GamePieceLoaded` | - |
 | Toggle Button | `BrakeModeEnabled` | - |
