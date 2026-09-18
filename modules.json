@@ -106,7 +106,7 @@
 				{
 					"id": "field2d-figure-eight",
 					"title": "2D field pose",
-					"description": "A 2D Field tab plots RobotPose2d.",
+					"description": "A 2D Field tab plots RobotPose2d on the Evergreen field.",
 					"verifier": {
 						"type": "script",
 						"path": "checkpoints/advantagescope-intro/verify/field2d-figure-eight.sh"
@@ -115,7 +115,7 @@
 				{
 					"id": "field3d-figure-eight",
 					"title": "3D field pose",
-					"description": "A 3D Field tab plots RobotPose3d.",
+					"description": "A 3D Field tab plots RobotPose3d on the Evergreen field, camera set to Orbit Robot.",
 					"verifier": {
 						"type": "script",
 						"path": "checkpoints/advantagescope-intro/verify/field3d-figure-eight.sh"

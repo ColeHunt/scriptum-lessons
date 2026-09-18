@@ -23,12 +23,15 @@ With the robot running:
    The right axis's own scale is left auto - no need to lock it.
 4. Drag **GamePieceLoaded** onto the graph's discrete field (below the
    left/right axes) - it renders as colored bands instead of a numeric line.
-5. Add a **2D Field** tab and drag **RobotPose2d** onto it - you'll see the
-   figure-8 path traced from directly above.
-6. Add a **3D Field** tab and drag **RobotPose3d** onto it - the same path,
-   now with a 3D robot model driving it. Field2d wants a `Pose2d` topic;
-   Field3d wants a `Pose3d` one, which is why there are two separate topics
-   publishing the same path.
+5. Add a **2D Field** tab, drag **RobotPose2d** onto it, and set its field
+   to **Evergreen** - you'll see the figure-8 path traced from directly
+   above.
+6. Add a **3D Field** tab, drag **RobotPose3d** onto it, and set its field
+   to **Evergreen** too - the same path, now with a 3D robot model driving
+   it. Field2d wants a `Pose2d` topic; Field3d wants a `Pose3d` one, which
+   is why there are two separate topics publishing the same path.
+7. On the 3D Field, set the camera to **Orbit Robot** - it'll follow the
+   robot around the figure-8 instead of staying fixed on the whole field.
 
 ## Checking your work
 
