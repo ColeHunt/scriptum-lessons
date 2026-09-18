@@ -22,6 +22,4 @@ With the robot running:
 ## Checking your work
 
 Click **Checkpoints** in the top bar and run **Verify** whenever you want -
-the robot needs to be running for the live-data checkpoints to see anything.
-The layout checkpoints look at whatever you've configured in AdvantageScope,
-any time.
+every checkpoint here looks at whatever you've configured in AdvantageScope.

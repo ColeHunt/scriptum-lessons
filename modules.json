@@ -68,38 +68,6 @@
 			"track": "Tools",
 			"checkpoints": [
 				{
-					"id": "flywheel-rpm-changes",
-					"title": "Flywheel RPM changes",
-					"description": "flywheelRpm(t) changes over time.",
-					"verifier": {
-						"type": "nt4-value",
-						"topic": "/AdvantageKit/RealOutputs/FlywheelRPM",
-						"check": "changes"
-					}
-				},
-				{
-					"id": "flywheel-rpm-range",
-					"title": "Flywheel RPM in range",
-					"description": "flywheelRpm(t) stays between 0 and 6000.",
-					"verifier": {
-						"type": "nt4-value",
-						"topic": "/AdvantageKit/RealOutputs/FlywheelRPM",
-						"check": "range",
-						"min": 0.0,
-						"max": 6000.0
-					}
-				},
-				{
-					"id": "game-piece-loaded-toggles",
-					"title": "Game piece loaded toggles",
-					"description": "gamePieceLoaded(t) toggles as t changes.",
-					"verifier": {
-						"type": "nt4-value",
-						"topic": "/AdvantageKit/RealOutputs/GamePieceLoaded",
-						"check": "changes"
-					}
-				},
-				{
 					"id": "flywheel-graph",
 					"title": "Flywheel line graph",
 					"description": "A Line Graph tab plots FlywheelRPM.",
