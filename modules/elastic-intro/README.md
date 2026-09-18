@@ -19,16 +19,16 @@ With the robot running, drag each of these onto the grid and bind it to the
 listed topic (type the topic into the widget's properties, or drag the topic
 from the tree on the left):
 
-| Widget | Bind to | Suggested settings |
+| Widget | Bind to | Settings |
 | --- | --- | --- |
 | Text Display | `Counter` | - |
 | Large Text Display | `StatusMessage` | - |
-| Number Slider | `ShooterAngleDegrees` | Range 0-45 |
+| Number Slider | `ShooterAngleDegrees` | Min 0, Max 45 |
 | Number Bar | `ClimberSpeed` | Range 0-1 |
 | Voltage View | `BatteryVoltage` | Default range (4-13) is fine |
-| Radial Gauge | `GyroHeadingDegrees` | Range 0-360, turn on **Wrap Value** |
-| Graph | `IntakeCurrentAmps` | - |
-| Match Time | `MatchTimeRemaining` | - |
+| Radial Gauge | `GyroHeadingDegrees` | Min 0, Max 360 |
+| Graph | `IntakeCurrentAmps` | Min 0, Max 45 |
+| Match Time | `MatchTimeRemaining` | Red Start Time 15, Yellow Start Time 45 |
 | Boolean Box | `GamePieceLoaded` | - |
 | Toggle Button | `BrakeModeEnabled` | - |
 | Toggle Switch | `BrakeModeEnabled` | Same topic as Toggle Button - one setting, two widgets |
@@ -38,10 +38,14 @@ from the tree on the left):
 (Optional) Drag a **Field** widget and point its topic at `Field2d` - it
 automatically looks for the robot's pose at `Field2d/Robot`.
 
-Elastic saves your layout automatically as you go.
+Elastic doesn't always autosave right away - use **File > Save** before
+clicking Verify, or your latest changes won't be there yet.
 
 ## Checking your work
 
 Click **Checkpoints** in the top bar and run **Verify** whenever you want -
-every checkpoint here looks at whatever you've saved in your Elastic layout,
-so they work any time, robot running or not.
+every checkpoint here looks at whatever you last saved in your Elastic
+layout (see the note above), so they work any time, robot running or not.
+For the Number Slider, Radial Gauge, Graph, and Match Time widgets, the
+checkpoint also checks the range/threshold settings from the table above,
+not just which topic the widget is bound to.

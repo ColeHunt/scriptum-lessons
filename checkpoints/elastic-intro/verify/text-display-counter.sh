@@ -3,7 +3,7 @@ set -euo pipefail
 LAYOUT="$1/src/main/deploy/elastic-layout.json"
 
 if [[ ! -s "$LAYOUT" ]]; then
-	echo "Save your Elastic layout (it saves automatically), then click Verify again."
+	echo "Save your layout in Elastic (File > Save), then click Verify again."
 	exit 1
 fi
 
