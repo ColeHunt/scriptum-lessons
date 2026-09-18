@@ -203,7 +203,7 @@
 		{
 			"id": "choreo-intro",
 			"title": "Choreo: Planning Autonomous Paths",
-			"description": "Build an autonomous path with real constraints and confirm it generates correctly.",
+			"description": "Build two different autonomous paths with real constraints and confirm they generate correctly.",
 			"subdir": "modules/choreo-intro",
 			"kind": "robot",
 			"order": 9,
@@ -211,11 +211,20 @@
 			"checkpoints": [
 				{
 					"id": "has-waypoints",
-					"title": "Path has waypoints",
-					"description": "The path has at least two waypoints.",
+					"title": "Paths have waypoints",
+					"description": "Every path has at least four waypoints.",
 					"verifier": {
 						"type": "script",
 						"path": "checkpoints/choreo-intro/verify/has-waypoints.sh"
+					}
+				},
+				{
+					"id": "has-two-distinct-paths",
+					"title": "Two different paths",
+					"description": "At least two paths exist, and they aren't just copies of each other.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/choreo-intro/verify/has-two-distinct-paths.sh"
 					}
 				},
 				{
@@ -269,21 +278,21 @@
 			"requires": ["hello-world"],
 			"checkpoints": [
 				{
-					"id": "team-number",
-					"title": "Team number",
-					"description": "teamNumber() returns 4143 from a local variable.",
+					"id": "local-variables",
+					"title": "Local variables",
+					"description": "main() declares and prints an int, double, boolean, and String local variable.",
 					"verifier": {
 						"type": "script",
-						"path": "checkpoints/java-variables/verify/team-number.sh"
+						"path": "checkpoints/java-variables/verify/local-variables.sh"
 					}
 				},
 				{
-					"id": "max-speed-constant",
-					"title": "Max speed constant",
-					"description": "A public static final MAX_SPEED constant equal to 5.0 (team standard: SCREAMING_SNAKE_CASE).",
+					"id": "team-name-constant",
+					"title": "Team name constant",
+					"description": "A public static final TEAM_NAME constant equal to \"Team 4143\" (team standard: SCREAMING_SNAKE_CASE).",
 					"verifier": {
 						"type": "script",
-						"path": "checkpoints/java-variables/verify/max-speed-constant.sh"
+						"path": "checkpoints/java-variables/verify/team-name-constant.sh"
 					}
 				},
 				{
@@ -293,6 +302,24 @@
 					"verifier": {
 						"type": "script",
 						"path": "checkpoints/java-variables/verify/alliance-enum.sh"
+					}
+				},
+				{
+					"id": "match-period-enum",
+					"title": "Match period enum",
+					"description": "A MATCH_PERIOD enum with AUTONOMOUS, TELEOP, and ENDGAME values (team standard: SCREAMING_SNAKE_CASE).",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/java-variables/verify/match-period-enum.sh"
+					}
+				},
+				{
+					"id": "max-speed-constant",
+					"title": "Max speed constant",
+					"description": "A public static final MAX_SPEED constant equal to 5.0 (team standard: SCREAMING_SNAKE_CASE).",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/java-variables/verify/max-speed-constant.sh"
 					}
 				}
 			]

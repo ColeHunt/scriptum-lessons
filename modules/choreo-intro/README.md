@@ -12,17 +12,20 @@ robot's geometry is already loaded.
 ## What to do
 
 1. Create a new path (the **+** button in the path list) and drag out at
-   least two waypoints on the field.
+   least four waypoints on the field.
 2. Add at least one constraint from the constraints panel - **Max
    Velocity**, **Max Angular Velocity**, and **Keep In Rectangle** (a field
    boundary) are all good choices for a first path.
 3. Generate the path. Choreo saves your `.traj` file automatically once it
    solves.
+4. Create a **second** path (again with at least four waypoints) that's
+   actually different from the first - moving the waypoints somewhere new,
+   not just duplicating the first path and leaving it untouched.
 
-Exact waypoint positions don't matter - any path with the shapes above will
-pass. What matters is that it actually generates: a constraint that can't be
-satisfied (like a velocity limit the robot can't hit) leaves the path
-unsolved.
+Exact waypoint positions don't matter - any pair of paths with the shapes
+above will pass, as long as the two paths' waypoints aren't identical. What
+matters is that both actually generate: a constraint that can't be satisfied
+(like a velocity limit the robot can't hit) leaves a path unsolved.
 
 ## Checking your work
 

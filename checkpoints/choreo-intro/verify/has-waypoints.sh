@@ -11,12 +11,15 @@ if [ ${#trajs[@]} -eq 0 ]; then
 	exit 1
 fi
 
+# Every path the student has made needs the full four waypoints - not just
+# one of them - so a second, lazily-built path can't skate by on the first
+# path's work.
 for traj in "${trajs[@]}"; do
-	if jq -e '(.snapshot.waypoints | length) >= 2' "$traj" >/dev/null 2>&1; then
-		echo "Path has at least two waypoints."
-		exit 0
+	if ! jq -e '(.snapshot.waypoints | length) >= 4' "$traj" >/dev/null 2>&1; then
+		echo "$(basename "$traj" .traj) needs at least four waypoints."
+		exit 1
 	fi
 done
 
-echo "Add at least two waypoints to your path (a start and an end)."
-exit 1
+echo "Every path has at least four waypoints."
+exit 0
