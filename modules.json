@@ -102,6 +102,24 @@
 						"type": "script",
 						"path": "checkpoints/advantagescope-intro/verify/game-piece-discrete.sh"
 					}
+				},
+				{
+					"id": "field2d-figure-eight",
+					"title": "2D field pose",
+					"description": "A 2D Field tab plots RobotPose2d.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/advantagescope-intro/verify/field2d-figure-eight.sh"
+					}
+				},
+				{
+					"id": "field3d-figure-eight",
+					"title": "3D field pose",
+					"description": "A 3D Field tab plots RobotPose3d.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/advantagescope-intro/verify/field3d-figure-eight.sh"
+					}
 				}
 			]
 		},
