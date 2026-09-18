@@ -4,21 +4,12 @@ Background: [AdvantageScope](https://docs.advantagescope.org/) is the tool
 teams use to visualize robot telemetry - line graphs, 3D/2D fields, tables,
 and more.
 
-AdvantageScope reads *live* data here, the same way Elastic does - there's no
-log file to open. Click **Run** to start the robot in simulation, then open
-the **Scope** pane on the right. It connects automatically.
-
-## Contract
-
-Fill in the two methods in `src/main/java/frc/robot/RobotContainer.java`:
-
-- `double flywheelRpm(double t)` - oscillates between 0 and 6000 as `t`
-  increases (a sine wave works well).
-- `boolean gamePieceLoaded(double t)` - toggles back and forth as `t`
-  increases.
-
-Once you click Run, these publish live to `FlywheelRPM` and
-`GamePieceLoaded`.
+The robot code is already written and already publishing `FlywheelRPM` (an
+oscillating value) and `GamePieceLoaded` (a toggling boolean) - this lesson
+is about the tool, not the code. Click **Start** in the Driver Station,
+choose a mode, and click **Enable**. Then open the **Scope** pane on the
+right - AdvantageScope reads *live* data here, the same way Elastic does, and
+connects automatically. No log file to open.
 
 ## Using AdvantageScope
 

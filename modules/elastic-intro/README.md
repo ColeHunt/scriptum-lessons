@@ -5,22 +5,13 @@ teams run on the driver station laptop during a match - number displays,
 boolean indicators, a field view, and more, all bound to live NetworkTables
 data.
 
+The robot code is already written and already publishing `ClimberSpeed` (a
+changing value between 0.0 and 1.0), `GamePieceLoaded` (a toggling boolean),
+and a robot pose driving in a circle at `Field2d/Robot` - this lesson is
+about the tool, not the code. Click **Start** in the Driver Station, choose a
+mode, and click **Enable**. Then open the **Elastic** pane on the right.
 Unlike AdvantageScope, Elastic only shows *live* data - there's no log file
-to open. Click **Run** to start the robot in simulation, then open the
-**Elastic** pane on the right. It connects automatically.
-
-## Contract
-
-Fill in the two methods in `src/main/java/frc/robot/RobotContainer.java`:
-
-- `double climberSpeed(double t)` - between 0.0 and 1.0, changing over time
-  (a sine wave works well).
-- `boolean gamePieceLoaded(double t)` - toggles back and forth as `t`
-  increases.
-
-Once you click Run, these publish live to `ClimberSpeed` and
-`GamePieceLoaded`. A robot pose driving in a circle is already provided at
-`Field2d/Robot`, so you don't need to write any pose math.
+to open, and it connects automatically.
 
 ## Using Elastic
 

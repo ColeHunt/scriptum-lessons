@@ -61,7 +61,7 @@
 		{
 			"id": "advantagescope-intro",
 			"title": "AdvantageScope: Reading Robot Telemetry",
-			"description": "Publish live robot telemetry, then configure AdvantageScope's layout to display it.",
+			"description": "Configure AdvantageScope's layout to display already-published robot telemetry.",
 			"subdir": "modules/advantagescope-intro",
 			"kind": "robot",
 			"order": 7,
@@ -132,7 +132,7 @@
 		{
 			"id": "elastic-intro",
 			"title": "Elastic: Configuring a Competition Dashboard",
-			"description": "Publish live robot telemetry, then configure Elastic's dashboard layout to display it.",
+			"description": "Configure Elastic's dashboard layout to display already-published robot telemetry.",
 			"subdir": "modules/elastic-intro",
 			"kind": "robot",
 			"order": 8,

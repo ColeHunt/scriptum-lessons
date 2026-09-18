@@ -6,26 +6,23 @@ import org.littletonrobotics.junction.Logger;
 
 /**
  * The robot's behavior lives here. {@link Robot} handles the AdvantageKit logging setup and calls
- * {@link #robotPeriodic()} every loop, so you can focus on your code below.
+ * {@link #robotPeriodic()} every loop, so you can focus on the tool, not the code.
  *
- * <p>Fill in {@link #flywheelRpm} and {@link #gamePieceLoaded} below - once you click Run, they
- * publish live through AdvantageKit's {@link Logger}, and AdvantageScope (the "Scope" tab above)
- * connects to that live stream automatically, the same way Elastic does.
+ * <p>{@link #flywheelRpm} and {@link #gamePieceLoaded} already publish live through
+ * AdvantageKit's {@link Logger} - once the robot is running, AdvantageScope (the "Scope" tab
+ * above) connects to that live stream automatically, the same way Elastic does.
  */
 public class RobotContainer {
   private final Timer timer = new Timer();
 
-  // TODO: return a flywheel RPM that oscillates between 0 and 6000 as t
-  // increases - a sine wave works well, e.g. 3000 + 3000 * Math.sin(t).
+  // Oscillates between 0 and 6000 as t increases.
   public static double flywheelRpm(double t) {
-    return 0.0;
+    return 3000 + 3000 * Math.sin(t);
   }
 
-  // TODO: return whether a game piece is loaded at time t. It should
-  // toggle back and forth as t increases, not stay fixed - e.g. based on
-  // whether (int) t is even or odd.
+  // Toggles back and forth as t increases.
   public static boolean gamePieceLoaded(double t) {
-    return false;
+    return ((int) t) % 2 == 0;
   }
 
   public RobotContainer() {

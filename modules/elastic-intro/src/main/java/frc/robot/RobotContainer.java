@@ -8,27 +8,24 @@ import org.littletonrobotics.junction.Logger;
 
 /**
  * The robot's behavior lives here. {@link Robot} handles the AdvantageKit logging setup and calls
- * {@link #robotPeriodic()} every loop, so you can focus on your code below.
+ * {@link #robotPeriodic()} every loop, so you can focus on the tool, not the code.
  *
- * <p>This starter logs a counter and a robot pose that drives in a circle, both through
- * AdvantageKit's {@link Logger} - open Elastic (the "Elastic" tab above) to confirm live
- * telemetry works end to end. Fill in {@link #climberSpeed} and {@link #gamePieceLoaded} below,
- * then configure Elastic to display them.
+ * <p>This starter logs a counter, a climber speed, a game piece sensor, and a robot pose that
+ * drives in a circle, all through AdvantageKit's {@link Logger} - open Elastic (the "Elastic" tab
+ * above) to confirm live telemetry works end to end, then configure Elastic to display them.
  */
 public class RobotContainer {
   private final Timer timer = new Timer();
   private long counter = 0;
 
-  // TODO: return a climber speed between 0.0 and 1.0 that changes over time
-  // (a sine wave works well).
+  // Between 0.0 and 1.0, changing over time.
   public static double climberSpeed(double t) {
-    return 0.0;
+    return 0.5 + 0.5 * Math.sin(t);
   }
 
-  // TODO: return whether a game piece is loaded - should toggle back and
-  // forth as t changes.
+  // Toggles back and forth as t changes.
   public static boolean gamePieceLoaded(double t) {
-    return false;
+    return ((int) t) % 2 == 0;
   }
 
   public RobotContainer() {
