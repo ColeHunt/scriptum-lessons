@@ -171,6 +171,33 @@
 					}
 				},
 				{
+					"id": "text-display-counter",
+					"title": "Counter text display",
+					"description": "A Text Display widget is bound to Counter.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/text-display-counter.sh"
+					}
+				},
+				{
+					"id": "large-text-display-status",
+					"title": "Status large text display",
+					"description": "A Large Text Display widget is bound to StatusMessage.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/large-text-display-status.sh"
+					}
+				},
+				{
+					"id": "number-slider-shooter-angle",
+					"title": "Shooter angle number slider",
+					"description": "A Number Slider widget is bound to ShooterAngleDegrees.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/number-slider-shooter-angle.sh"
+					}
+				},
+				{
 					"id": "number-bar-climber",
 					"title": "Climber speed number bar",
 					"description": "A Number Bar widget is bound to ClimberSpeed.",
@@ -180,12 +207,84 @@
 					}
 				},
 				{
+					"id": "voltage-view-battery",
+					"title": "Battery voltage view",
+					"description": "A Voltage View widget is bound to BatteryVoltage.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/voltage-view-battery.sh"
+					}
+				},
+				{
+					"id": "radial-gauge-gyro",
+					"title": "Gyro heading radial gauge",
+					"description": "A Radial Gauge widget is bound to GyroHeadingDegrees.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/radial-gauge-gyro.sh"
+					}
+				},
+				{
+					"id": "graph-intake-current",
+					"title": "Intake current graph",
+					"description": "A Graph widget is bound to IntakeCurrentAmps.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/graph-intake-current.sh"
+					}
+				},
+				{
+					"id": "match-time-remaining",
+					"title": "Match time widget",
+					"description": "A Match Time widget is bound to MatchTimeRemaining.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/match-time-remaining.sh"
+					}
+				},
+				{
 					"id": "boolean-box-game-piece",
 					"title": "Game piece boolean box",
 					"description": "A Boolean Box widget is bound to GamePieceLoaded.",
 					"verifier": {
 						"type": "script",
 						"path": "checkpoints/elastic-intro/verify/boolean-box-game-piece.sh"
+					}
+				},
+				{
+					"id": "toggle-button-brake-mode",
+					"title": "Brake mode toggle button",
+					"description": "A Toggle Button widget is bound to BrakeModeEnabled.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/toggle-button-brake-mode.sh"
+					}
+				},
+				{
+					"id": "toggle-switch-brake-mode",
+					"title": "Brake mode toggle switch",
+					"description": "A Toggle Switch widget is bound to BrakeModeEnabled.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/toggle-switch-brake-mode.sh"
+					}
+				},
+				{
+					"id": "single-color-view-status",
+					"title": "Status single color view",
+					"description": "A Single Color View widget is bound to StatusColorHex.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/single-color-view-status.sh"
+					}
+				},
+				{
+					"id": "multi-color-view-led-strip",
+					"title": "LED strip multi color view",
+					"description": "A Multi Color View widget is bound to LedStripColorsHex.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/multi-color-view-led-strip.sh"
 					}
 				},
 				{
