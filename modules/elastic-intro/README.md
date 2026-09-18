@@ -41,6 +41,13 @@ automatically looks for the robot's pose at `Field2d/Robot`.
 Elastic doesn't always autosave right away - use **File > Save** before
 clicking Verify, or your latest changes won't be there yet.
 
+Elastic also remembers whatever layout it last had open, separate from this
+project's own layout file - so if this module was just reset, or you're
+coming from a different lesson, you may see an old dashboard instead of a
+blank one. If that happens, use **File > Open Layout** (`Ctrl+O`) and pick
+`src/main/deploy/elastic-layout.json` from this project to get back to a
+clean slate.
+
 ## Checking your work
 
 Click **Checkpoints** in the top bar and run **Verify** whenever you want -
