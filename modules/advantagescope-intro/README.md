@@ -15,9 +15,13 @@ connects automatically. No log file to open.
 
 With the robot running:
 
-1. Drag **FlywheelRPM** onto a new **Line Graph** tab.
-2. Right-click the graph's Y axis and lock its range to roughly 0-6000.
-3. (Optional) Drag **GamePieceLoaded** onto a new **Table** tab.
+1. Drag **FlywheelRPM** onto a new **Line Graph** tab's left axis.
+2. Right-click the left axis and lock its range to roughly 0-3000.
+3. Drag **FlywheelRPM** again, this time onto the graph's right axis, then
+   right-click the right axis and set its **Filter** to **Differentiate**.
+   The right axis's own scale is left auto - no need to lock it.
+4. Drag **GamePieceLoaded** onto the graph's discrete field (below the
+   left/right axes) - it renders as colored bands instead of a numeric line.
 
 ## Checking your work
 

@@ -70,7 +70,7 @@
 				{
 					"id": "flywheel-graph",
 					"title": "Flywheel line graph",
-					"description": "A Line Graph tab plots FlywheelRPM.",
+					"description": "A Line Graph tab plots FlywheelRPM on its left axis.",
 					"verifier": {
 						"type": "script",
 						"path": "checkpoints/advantagescope-intro/verify/flywheel-graph.sh"
@@ -79,20 +79,28 @@
 				{
 					"id": "flywheel-axis-scale",
 					"title": "Locked axis scale",
-					"description": "The Line Graph's Y axis is locked to roughly 0-6000.",
+					"description": "The Line Graph's left Y axis is locked to roughly 0-3000.",
 					"verifier": {
 						"type": "script",
 						"path": "checkpoints/advantagescope-intro/verify/flywheel-axis-scale.sh"
 					}
 				},
 				{
-					"id": "game-piece-table",
-					"title": "Game piece table",
-					"description": "A Table tab lists GamePieceLoaded.",
-					"optional": true,
+					"id": "flywheel-rpm-differentiated",
+					"title": "Differentiated flywheel RPM",
+					"description": "FlywheelRPM also plots on the right axis with the Differentiate filter applied.",
 					"verifier": {
 						"type": "script",
-						"path": "checkpoints/advantagescope-intro/verify/game-piece-table.sh"
+						"path": "checkpoints/advantagescope-intro/verify/flywheel-rpm-differentiated.sh"
+					}
+				},
+				{
+					"id": "game-piece-discrete",
+					"title": "Game piece discrete field",
+					"description": "GamePieceLoaded is added to the Line Graph's discrete field.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/advantagescope-intro/verify/game-piece-discrete.sh"
 					}
 				}
 			]
