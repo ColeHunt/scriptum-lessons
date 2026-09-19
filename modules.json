@@ -301,16 +301,6 @@
 						"type": "script",
 						"path": "checkpoints/elastic-intro/verify/multi-color-view-led-strip.sh"
 					}
-				},
-				{
-					"id": "field-widget",
-					"title": "Field widget",
-					"description": "A Field widget's topic is set to Field2d.",
-					"optional": true,
-					"verifier": {
-						"type": "script",
-						"path": "checkpoints/elastic-intro/verify/field-widget.sh"
-					}
 				}
 			]
 		},
