@@ -138,7 +138,8 @@
 					"verifier": {
 						"type": "nt4-value",
 						"topic": "/AdvantageKit/RealOutputs/FlywheelTargetRPM",
-						"check": "changes"
+						"check": "differs-from-default",
+						"expected": 3000
 					}
 				}
 			]
