@@ -5,6 +5,9 @@ import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import org.littletonrobotics.junction.Logger;
+import org.littletonrobotics.junction.networktables.LoggedDashboardChooser;
+import org.littletonrobotics.junction.networktables.LoggedNetworkBoolean;
+import org.littletonrobotics.junction.networktables.LoggedNetworkNumber;
 
 /**
  * The robot's behavior lives here. {@link Robot} handles the AdvantageKit logging setup and calls
@@ -14,10 +17,30 @@ import org.littletonrobotics.junction.Logger;
  * table), plus a robot pose that drives in a circle for the Field widget, all through
  * AdvantageKit's {@link Logger} - open Elastic (the "Elastic" tab above) to confirm live telemetry
  * works end to end, then configure Elastic to display them.
+ *
+ * <p>{@link #autoRoutine}, {@link #autoDelaySeconds}, and {@link #brakeModeEnabled} run the other
+ * direction: they're written *from* Elastic, and the robot only reads them. Unlike AdvantageScope's
+ * Tuning Mode, Elastic has no separate "armed" toggle to flip first - any widget bound to a plain
+ * writable topic accepts input as soon as it's on the grid.
  */
 public class RobotContainer {
   private final Timer timer = new Timer();
   private long counter = 0;
+
+  // An operator input, chosen from Elastic's ComboBox Chooser or Split Button Chooser - the same
+  // chooser, just displayed with two different widgets.
+  private final LoggedDashboardChooser<String> autoRoutine =
+      new LoggedDashboardChooser<>("AutoRoutine");
+
+  // An operator input, written from Elastic's Text Display (turn on its Show Submit Button
+  // setting so it publishes once on submit, not on every keystroke).
+  private final LoggedNetworkNumber autoDelaySeconds =
+      new LoggedNetworkNumber("/AutoDelaySeconds", 0.0);
+
+  // An operator input, written from a Toggle Button or Toggle Switch - unlike every other boolean
+  // in this file, this one is not computed here.
+  private final LoggedNetworkBoolean brakeModeEnabled =
+      new LoggedNetworkBoolean("/BrakeModeEnabled", false);
 
   // Between 0.0 and 1.0, changing over time.
   public static double climberSpeed(double t) {
@@ -54,11 +77,6 @@ public class RobotContainer {
     return 150.0 - (t % 150.0);
   }
 
-  // Flips every 3 seconds.
-  public static boolean brakeModeEnabled(double t) {
-    return ((int) (t / 3.0)) % 2 == 0;
-  }
-
   // A short status string that tracks gamePieceLoaded.
   public static String statusMessage(double t) {
     return gamePieceLoaded(t) ? "Game piece loaded" : "Game piece empty";
@@ -71,6 +89,9 @@ public class RobotContainer {
   }
 
   public RobotContainer() {
+    autoRoutine.addDefaultOption("Do nothing", "Do nothing");
+    autoRoutine.addOption("Leave only", "Leave only");
+    autoRoutine.addOption("Score preload, then leave", "Score preload, then leave");
     timer.start();
   }
 
@@ -92,7 +113,6 @@ public class RobotContainer {
     Logger.recordOutput("GyroHeadingDegrees", gyroHeadingDegrees(seconds));
     Logger.recordOutput("IntakeCurrentAmps", intakeCurrentAmps(seconds));
     Logger.recordOutput("MatchTimeRemaining", matchTimeRemaining(seconds));
-    Logger.recordOutput("BrakeModeEnabled", brakeModeEnabled(seconds));
     Logger.recordOutput("StatusMessage", statusMessage(seconds));
     Logger.recordOutput("StatusColorHex", statusColorHex(seconds));
 
@@ -109,5 +129,9 @@ public class RobotContainer {
     double y = 4.0 + radius * Math.sin(omega * seconds);
     Rotation2d heading = new Rotation2d(omega * seconds + Math.PI / 2);
     Logger.recordOutput("Field2d/Robot", new Pose2d(x, y, heading));
+
+    // autoRoutine, autoDelaySeconds, and brakeModeEnabled need nothing here -
+    // they're LoggedDashboardChooser/LoggedNetworkNumber/LoggedNetworkBoolean,
+    // which read their live NT value automatically every loop.
   }
 }

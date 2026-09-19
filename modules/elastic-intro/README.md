@@ -30,13 +30,32 @@ from the tree on the left):
 | Graph | `IntakeCurrentAmps` | Min 0, Max 45, Graph Color pure white |
 | Match Time | `MatchTimeRemaining` | Red Start Time 15, Yellow Start Time 45 |
 | Boolean Box | `GamePieceLoaded` | - |
-| Toggle Button | `BrakeModeEnabled` | - |
-| Toggle Switch | `BrakeModeEnabled` | Same topic as Toggle Button - one setting, two widgets |
 | Single Color View | `StatusColorHex` | - |
 | Multi Color View | `LedStripColorsHex` | - |
 
 (Optional) Drag a **Field** widget and point its topic at `Field2d` - it
 automatically looks for the robot's pose at `Field2d/Robot`.
+
+## Writing to the robot
+
+Every widget above only *displays* a value the robot code already computed.
+These five go the other way - you set them from Elastic, and the robot code
+just reads whatever you last sent:
+
+| Widget | Bind to | Settings |
+| --- | --- | --- |
+| ComboBox Chooser | `AutoRoutine` | - |
+| Split Button Chooser | `AutoRoutine` | Same topic as the ComboBox Chooser - one chooser, two widgets |
+| Text Display | `AutoDelaySeconds` | Turn on Show Submit Button, so it publishes once you hit Enter instead of on every keystroke |
+| Toggle Button | `BrakeModeEnabled` | - |
+| Toggle Switch | `BrakeModeEnabled` | Same topic as the Toggle Button - one setting, two widgets |
+
+Try it live: pick a different option in the chooser, type a new number into
+`AutoDelaySeconds` and submit it, and click the brake mode toggle - each
+change reaches the robot over NetworkTables the same way a real driver
+station does before a match. There's nothing to arm first, unlike
+AdvantageScope's Tuning Mode: any widget bound to a plain writable topic
+accepts input as soon as it's on the grid.
 
 Elastic doesn't always autosave right away - use **File > Save** before
 clicking Verify, or your latest changes won't be there yet.

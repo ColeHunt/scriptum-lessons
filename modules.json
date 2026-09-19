@@ -236,9 +236,36 @@
 					}
 				},
 				{
+					"id": "combo-box-chooser-auto-routine",
+					"title": "Auto routine combo box chooser",
+					"description": "A ComboBox Chooser widget is bound to AutoRoutine.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/combo-box-chooser-auto-routine.sh"
+					}
+				},
+				{
+					"id": "split-button-chooser-auto-routine",
+					"title": "Auto routine split button chooser",
+					"description": "A Split Button Chooser widget is bound to AutoRoutine.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/split-button-chooser-auto-routine.sh"
+					}
+				},
+				{
+					"id": "text-display-auto-delay",
+					"title": "Auto delay text display",
+					"description": "A Text Display widget is bound to AutoDelaySeconds.",
+					"verifier": {
+						"type": "script",
+						"path": "checkpoints/elastic-intro/verify/text-display-auto-delay.sh"
+					}
+				},
+				{
 					"id": "toggle-button-brake-mode",
 					"title": "Brake mode toggle button",
-					"description": "A Toggle Button widget is bound to BrakeModeEnabled.",
+					"description": "A Toggle Button widget writes BrakeModeEnabled.",
 					"verifier": {
 						"type": "script",
 						"path": "checkpoints/elastic-intro/verify/toggle-button-brake-mode.sh"
@@ -247,7 +274,7 @@
 				{
 					"id": "toggle-switch-brake-mode",
 					"title": "Brake mode toggle switch",
-					"description": "A Toggle Switch widget is bound to BrakeModeEnabled.",
+					"description": "A Toggle Switch widget writes BrakeModeEnabled.",
 					"verifier": {
 						"type": "script",
 						"path": "checkpoints/elastic-intro/verify/toggle-switch-brake-mode.sh"
