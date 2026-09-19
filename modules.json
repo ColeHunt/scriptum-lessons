@@ -265,19 +265,23 @@
 				{
 					"id": "toggle-button-brake-mode",
 					"title": "Brake mode toggle button",
-					"description": "A Toggle Button widget writes BrakeModeEnabled.",
+					"description": "BrakeModeEnabledButton was toggled live from Elastic's Toggle Button.",
 					"verifier": {
-						"type": "script",
-						"path": "checkpoints/elastic-intro/verify/toggle-button-brake-mode.sh"
+						"type": "nt4-value",
+						"topic": "/BrakeModeEnabledButton",
+						"check": "differs-from-default",
+						"expected": false
 					}
 				},
 				{
 					"id": "toggle-switch-brake-mode",
 					"title": "Brake mode toggle switch",
-					"description": "A Toggle Switch widget writes BrakeModeEnabled.",
+					"description": "BrakeModeEnabledSwitch was toggled live from Elastic's Toggle Switch.",
 					"verifier": {
-						"type": "script",
-						"path": "checkpoints/elastic-intro/verify/toggle-switch-brake-mode.sh"
+						"type": "nt4-value",
+						"topic": "/BrakeModeEnabledSwitch",
+						"check": "differs-from-default",
+						"expected": false
 					}
 				},
 				{

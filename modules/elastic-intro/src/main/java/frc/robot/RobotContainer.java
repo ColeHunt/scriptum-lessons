@@ -18,10 +18,11 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber;
  * AdvantageKit's {@link Logger} - open Elastic (the "Elastic" tab above) to confirm live telemetry
  * works end to end, then configure Elastic to display them.
  *
- * <p>{@link #autoRoutine}, {@link #autoDelaySeconds}, and {@link #brakeModeEnabled} run the other
- * direction: they're written *from* Elastic, and the robot only reads them. Unlike AdvantageScope's
- * Tuning Mode, Elastic has no separate "armed" toggle to flip first - any widget bound to a plain
- * writable topic accepts input as soon as it's on the grid.
+ * <p>{@link #autoRoutine}, {@link #autoDelaySeconds}, {@link #brakeModeEnabledButton}, and {@link
+ * #brakeModeEnabledSwitch} run the other direction: they're written *from* Elastic, and the robot
+ * only reads them. Unlike AdvantageScope's Tuning Mode, Elastic has no separate "armed" toggle to
+ * flip first - any widget bound to a plain writable topic accepts input as soon as it's on the
+ * grid.
  */
 public class RobotContainer {
   private final Timer timer = new Timer();
@@ -37,10 +38,13 @@ public class RobotContainer {
   private final LoggedNetworkNumber autoDelaySeconds =
       new LoggedNetworkNumber("/AutoDelaySeconds", 0.0);
 
-  // An operator input, written from a Toggle Button or Toggle Switch - unlike every other boolean
-  // in this file, this one is not computed here.
-  private final LoggedNetworkBoolean brakeModeEnabled =
-      new LoggedNetworkBoolean("/BrakeModeEnabled", false);
+  // Two separate operator inputs, each written by its own widget - unlike every other boolean in
+  // this file, neither is computed here. Separate keys (rather than one topic shared by both
+  // widgets) so a checkpoint can tell the two widgets apart live over NT4.
+  private final LoggedNetworkBoolean brakeModeEnabledButton =
+      new LoggedNetworkBoolean("/BrakeModeEnabledButton", false);
+  private final LoggedNetworkBoolean brakeModeEnabledSwitch =
+      new LoggedNetworkBoolean("/BrakeModeEnabledSwitch", false);
 
   // Between 0.0 and 1.0, changing over time.
   public static double climberSpeed(double t) {
@@ -130,8 +134,9 @@ public class RobotContainer {
     Rotation2d heading = new Rotation2d(omega * seconds + Math.PI / 2);
     Logger.recordOutput("Field2d/Robot", new Pose2d(x, y, heading));
 
-    // autoRoutine, autoDelaySeconds, and brakeModeEnabled need nothing here -
-    // they're LoggedDashboardChooser/LoggedNetworkNumber/LoggedNetworkBoolean,
-    // which read their live NT value automatically every loop.
+    // autoRoutine, autoDelaySeconds, brakeModeEnabledButton, and
+    // brakeModeEnabledSwitch need nothing here - they're
+    // LoggedDashboardChooser/LoggedNetworkNumber/LoggedNetworkBoolean, which
+    // read their live NT value automatically every loop.
   }
 }

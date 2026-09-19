@@ -47,8 +47,8 @@ just reads whatever you last sent:
 | ComboBox Chooser | `AutoRoutine` | - |
 | Split Button Chooser | `AutoRoutine` | Same topic as the ComboBox Chooser - one chooser, two widgets |
 | Text Display | `AutoDelaySeconds` | Turn on Show Submit Button, so it publishes once you hit Enter instead of on every keystroke |
-| Toggle Button | `BrakeModeEnabled` | - |
-| Toggle Switch | `BrakeModeEnabled` | Same topic as the Toggle Button - one setting, two widgets |
+| Toggle Button | `BrakeModeEnabledButton` | - |
+| Toggle Switch | `BrakeModeEnabledSwitch` | A separate topic from the Toggle Button, not shared this time |
 
 Try it live: pick a different option in the chooser, type a new number into
 `AutoDelaySeconds` and submit it, and click the brake mode toggle - each
@@ -69,9 +69,14 @@ clean slate.
 
 ## Checking your work
 
-Click **Checkpoints** in the top bar and run **Verify** whenever you want -
-every checkpoint here looks at whatever you last saved in your Elastic
-layout (see the note above), so they work any time, robot running or not.
-For the Number Slider, Radial Gauge, Graph, and Match Time widgets, the
-checkpoint also checks the range/threshold settings from the table above,
-not just which topic the widget is bound to.
+Click **Checkpoints** in the top bar and run **Verify** whenever you want.
+Most checkpoints here look at whatever you last saved in your Elastic layout
+(see the note above), so they work any time, robot running or not. For the
+Number Slider, Radial Gauge, Graph, and Match Time widgets, the checkpoint
+also checks the range/threshold settings from the table above, not just
+which topic the widget is bound to.
+
+The two brake mode checkpoints are different: they check the *live* NT4
+value, not the saved layout, so the robot needs to be running and you need
+to have actually clicked the widget at least once - just adding it to the
+grid isn't enough.
