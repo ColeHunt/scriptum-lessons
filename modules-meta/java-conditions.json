@@ -1,0 +1,29 @@
+{
+	"title": "Conditions",
+	"description": "Write if/else chains and switch statements.",
+	"subdir": "modules/java-conditions",
+	"kind": "plain-java",
+	"requires": [
+		"java-operators"
+	],
+	"checkpoints": [
+		{
+			"id": "battery-status",
+			"title": "Battery status",
+			"description": "batteryStatus(percent) maps a percentage to EMPTY/LOW/MEDIUM/FULL.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-conditions/verify/battery-status.sh"
+			}
+		},
+		{
+			"id": "day-name",
+			"title": "Day name",
+			"description": "dayName(day) uses a switch statement to name the day of the week.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-conditions/verify/day-name.sh"
+			}
+		}
+	]
+}

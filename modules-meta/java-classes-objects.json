@@ -1,0 +1,47 @@
+{
+	"title": "Classes & Objects",
+	"description": "Build the docs' MotorController example: fields, a constructor, and encapsulation.",
+	"subdir": "modules/java-classes-objects",
+	"kind": "plain-java",
+	"requires": [
+		"java-methods"
+	],
+	"checkpoints": [
+		{
+			"id": "constructor-direction",
+			"title": "Constructor & direction",
+			"description": "The constructor sets motor_direction_ from is_reversed.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-classes-objects/verify/constructor-direction.sh"
+			}
+		},
+		{
+			"id": "enable-required",
+			"title": "Enable required",
+			"description": "setMotorSpeed does nothing until enableMotor() is called.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-classes-objects/verify/enable-required.sh"
+			}
+		},
+		{
+			"id": "disable",
+			"title": "Disable",
+			"description": "disableMotor() zeroes the speed and re-gates setMotorSpeed.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-classes-objects/verify/disable.sh"
+			}
+		},
+		{
+			"id": "independent-objects",
+			"title": "Independent objects",
+			"description": "Two MotorController objects keep their own, separate state.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-classes-objects/verify/independent-objects.sh"
+			}
+		}
+	]
+}

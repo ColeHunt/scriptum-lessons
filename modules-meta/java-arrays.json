@@ -1,0 +1,47 @@
+{
+	"title": "Arrays",
+	"description": "Write methods that take and return arrays.",
+	"subdir": "modules/java-arrays",
+	"kind": "plain-java",
+	"requires": [
+		"java-loops"
+	],
+	"checkpoints": [
+		{
+			"id": "array-max",
+			"title": "Array max",
+			"description": "max(values) returns the largest element.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-arrays/verify/array-max.sh"
+			}
+		},
+		{
+			"id": "array-average",
+			"title": "Array average",
+			"description": "average(values) returns the mean as a double.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-arrays/verify/array-average.sh"
+			}
+		},
+		{
+			"id": "array-double-all",
+			"title": "Double every element",
+			"description": "doubleAll(values) returns a new array without mutating the input.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-arrays/verify/array-double-all.sh"
+			}
+		},
+		{
+			"id": "array-contains",
+			"title": "Array contains",
+			"description": "contains(values, target) searches the array for a value.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-arrays/verify/array-contains.sh"
+			}
+		}
+	]
+}

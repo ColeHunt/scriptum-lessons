@@ -1,0 +1,38 @@
+{
+	"title": "Methods",
+	"description": "Write void methods, methods with parameters, and methods that return a value.",
+	"subdir": "modules/java-methods",
+	"kind": "plain-java",
+	"requires": [
+		"java-arrays"
+	],
+	"checkpoints": [
+		{
+			"id": "stop-motor-void",
+			"title": "Stop motor (void)",
+			"description": "stopMotor() is a void method that prints MOTOR STOPPED.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-methods/verify/stop-motor-void.sh"
+			}
+		},
+		{
+			"id": "sum-three",
+			"title": "Sum three",
+			"description": "sumThree(a, b, c) takes three parameters and returns their sum.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-methods/verify/sum-three.sh"
+			}
+		},
+		{
+			"id": "team-name",
+			"title": "Team name",
+			"description": "teamName() takes no parameters and returns a fixed String.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-methods/verify/team-name.sh"
+			}
+		}
+	]
+}
