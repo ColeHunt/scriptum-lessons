@@ -17,12 +17,13 @@ public class Main {
     public static final double MAX_SPEED = 0.0;
 
     public static void main(String[] args) {
-        // TODO: declare these four local variables, then print each one on
-        // its own line with System.out.println, matching these labels:
-        //   int team_number = 4143;       -> "Team number: " + team_number
-        //   double pi = 3.14;              -> "Pi: " + pi
-        //   boolean robot_is_on = true;    -> "Robot is on: " + robot_is_on
-        //   String message = "I am a string!"; -> "Message: " + message
+        // TODO: declare four local variables (name them whatever you like)
+        // and print each on its own line with System.out.println, matching
+        // these datatypes/values/printed keys - see the README's table:
+        //   int, 4143         -> "Team number: " + <your variable>
+        //   double, 3.14      -> "Pi: " + <your variable>
+        //   boolean, true     -> "Robot is on: " + <your variable>
+        //   String, "I am a string!" -> "Message: " + <your variable>
 
         System.out.println("Team name: " + TEAM_NAME);
         System.out.println("Max speed: " + MAX_SPEED);

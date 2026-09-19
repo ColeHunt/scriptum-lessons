@@ -39,14 +39,25 @@ public static final double MAX_SPEED = 5.0;
 
 ## Contract
 
-Fill in these exactly as named — the checkpoints call them directly:
+Inside `main`, declare four local variables — name them whatever you like —
+and print each one with `System.out.println` so your output matches this
+table exactly (the checkpoint reads what gets printed, not your variable
+names):
 
-- Inside `main`, declare four local variables and print each one with
-  `System.out.println`, matching these labels and values exactly:
-  - `int team_number = 4143;` → `System.out.println("Team number: " + team_number);`
-  - `double pi = 3.14;` → `System.out.println("Pi: " + pi);`
-  - `boolean robot_is_on = true;` → `System.out.println("Robot is on: " + robot_is_on);`
-  - `String message = "I am a string!";` → `System.out.println("Message: " + message);`
+| Datatype | Value | Printed key |
+| --- | --- | --- |
+| `int` | `4143` | `Team number` |
+| `double` | `3.14` | `Pi` |
+| `boolean` | `true` | `Robot is on` |
+| `String` | `"I am a string!"` | `Message` |
+
+For example, the `int` row means: declare an `int` set to `4143`, then print
+`System.out.println("Team number: " + yourVariableName);`. Do the same for
+the other three rows.
+
+The constants and enums below are different — the checkpoints look these up
+by name via reflection, so fill them in exactly as named:
+
 - `String TEAM_NAME` — a `public static final` constant equal to
   `"Team 4143"`. Team standard: constants are `SCREAMING_SNAKE_CASE` and
   `final`.
