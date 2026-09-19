@@ -33,6 +33,33 @@
 				"type": "script",
 				"path": "checkpoints/java-operators/verify/is-even.sh"
 			}
+		},
+		{
+			"id": "subtract-ints",
+			"title": "Subtract two ints",
+			"description": "subtractInts(a, b) returns a - b.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-operators/verify/subtract-ints.sh"
+			}
+		},
+		{
+			"id": "meters-to-inches",
+			"title": "Meters to inches",
+			"description": "metersToInches(meters) converts using 1 inch = 0.0254 meters.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-operators/verify/meters-to-inches.sh"
+			}
+		},
+		{
+			"id": "apply-assignments",
+			"title": "Assignment operators",
+			"description": "applyAssignments(start) chains =, +=, -=, *=, and /= in order.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-operators/verify/apply-assignments.sh"
+			}
 		}
 	]
 }
