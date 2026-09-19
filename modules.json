@@ -175,10 +175,21 @@
 				{
 					"id": "number-slider-shooter-angle",
 					"title": "Shooter angle number slider",
-					"description": "A Number Slider widget is bound to ShooterAngleDegrees.",
+					"description": "A Number Slider widget writes ShooterAngleDegrees.",
 					"verifier": {
 						"type": "script",
 						"path": "checkpoints/elastic-intro/verify/number-slider-shooter-angle.sh"
+					}
+				},
+				{
+					"id": "shooter-angle-live",
+					"title": "Shooter angle live write",
+					"description": "ShooterAngleDegrees was dragged live from Elastic's Number Slider.",
+					"verifier": {
+						"type": "nt4-value",
+						"topic": "/ShooterAngleDegrees",
+						"check": "differs-from-default",
+						"expected": 0
 					}
 				},
 				{
@@ -254,12 +265,34 @@
 					}
 				},
 				{
+					"id": "auto-routine-live",
+					"title": "Auto routine live pick",
+					"description": "AutoRoutine was picked live from Elastic's chooser.",
+					"verifier": {
+						"type": "nt4-value",
+						"topic": "/SmartDashboard/AutoRoutine/selected",
+						"check": "differs-from-default",
+						"expected": "Do nothing"
+					}
+				},
+				{
 					"id": "text-display-auto-delay",
 					"title": "Auto delay text display",
-					"description": "A Text Display widget is bound to AutoDelaySeconds.",
+					"description": "A Text Display widget bound to AutoDelaySeconds has Show Submit Button on.",
 					"verifier": {
 						"type": "script",
 						"path": "checkpoints/elastic-intro/verify/text-display-auto-delay.sh"
+					}
+				},
+				{
+					"id": "auto-delay-live",
+					"title": "Auto delay live submit",
+					"description": "AutoDelaySeconds was submitted live from Elastic's Text Display.",
+					"verifier": {
+						"type": "nt4-value",
+						"topic": "/AutoDelaySeconds",
+						"check": "differs-from-default",
+						"expected": 0
 					}
 				},
 				{

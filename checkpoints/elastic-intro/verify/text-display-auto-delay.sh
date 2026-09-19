@@ -10,12 +10,13 @@ fi
 if jq -e '
 	any(.tabs[]?.grid_layout.containers[]?;
 		.type == "Text Display" and
-		((.properties.topic // "") | endswith("AutoDelaySeconds"))
+		((.properties.topic // "") | endswith("AutoDelaySeconds")) and
+		(.properties.show_submit_button == true)
 	)
 ' "$LAYOUT" >/dev/null 2>&1; then
 	echo "Text Display bound to AutoDelaySeconds looks good."
 	exit 0
 fi
 
-echo "Add a Text Display widget and bind it to AutoDelaySeconds."
+echo "Add a Text Display widget, bind it to AutoDelaySeconds, and turn on Show Submit Button."
 exit 1

@@ -18,11 +18,11 @@ import org.littletonrobotics.junction.networktables.LoggedNetworkNumber;
  * AdvantageKit's {@link Logger} - open Elastic (the "Elastic" tab above) to confirm live telemetry
  * works end to end, then configure Elastic to display them.
  *
- * <p>{@link #autoRoutine}, {@link #autoDelaySeconds}, {@link #brakeModeEnabledButton}, and {@link
- * #brakeModeEnabledSwitch} run the other direction: they're written *from* Elastic, and the robot
- * only reads them. Unlike AdvantageScope's Tuning Mode, Elastic has no separate "armed" toggle to
- * flip first - any widget bound to a plain writable topic accepts input as soon as it's on the
- * grid.
+ * <p>{@link #autoRoutine}, {@link #autoDelaySeconds}, {@link #shooterAngleDegrees}, {@link
+ * #brakeModeEnabledButton}, and {@link #brakeModeEnabledSwitch} run the other direction: they're
+ * written *from* Elastic, and the robot only reads them. Unlike AdvantageScope's Tuning Mode,
+ * Elastic has no separate "armed" toggle to flip first - any widget bound to a plain writable topic
+ * accepts input as soon as it's on the grid.
  */
 public class RobotContainer {
   private final Timer timer = new Timer();
@@ -37,6 +37,11 @@ public class RobotContainer {
   // setting so it publishes once on submit, not on every keystroke).
   private final LoggedNetworkNumber autoDelaySeconds =
       new LoggedNetworkNumber("/AutoDelaySeconds", 0.0);
+
+  // An operator input, dragged in from Elastic's Number Slider - unlike every other angle/speed
+  // value in this file, this one is not computed here.
+  private final LoggedNetworkNumber shooterAngleDegrees =
+      new LoggedNetworkNumber("/ShooterAngleDegrees", 0.0);
 
   // Two separate operator inputs, each written by its own widget - unlike every other boolean in
   // this file, neither is computed here. Separate keys (rather than one topic shared by both
@@ -54,11 +59,6 @@ public class RobotContainer {
   // Toggles back and forth as t changes.
   public static boolean gamePieceLoaded(double t) {
     return ((int) t) % 2 == 0;
-  }
-
-  // Between 0 and 45 degrees, changing over time.
-  public static double shooterAngleDegrees(double t) {
-    return 22.5 + 22.5 * Math.sin(t);
   }
 
   // Around 12 volts, drifting slightly like a real battery under load.
@@ -112,7 +112,6 @@ public class RobotContainer {
 
     Logger.recordOutput("ClimberSpeed", climberSpeed(seconds));
     Logger.recordOutput("GamePieceLoaded", gamePieceLoaded(seconds));
-    Logger.recordOutput("ShooterAngleDegrees", shooterAngleDegrees(seconds));
     Logger.recordOutput("BatteryVoltage", batteryVoltage(seconds));
     Logger.recordOutput("GyroHeadingDegrees", gyroHeadingDegrees(seconds));
     Logger.recordOutput("IntakeCurrentAmps", intakeCurrentAmps(seconds));
@@ -134,9 +133,9 @@ public class RobotContainer {
     Rotation2d heading = new Rotation2d(omega * seconds + Math.PI / 2);
     Logger.recordOutput("Field2d/Robot", new Pose2d(x, y, heading));
 
-    // autoRoutine, autoDelaySeconds, brakeModeEnabledButton, and
-    // brakeModeEnabledSwitch need nothing here - they're
-    // LoggedDashboardChooser/LoggedNetworkNumber/LoggedNetworkBoolean, which
-    // read their live NT value automatically every loop.
+    // autoRoutine, autoDelaySeconds, shooterAngleDegrees,
+    // brakeModeEnabledButton, and brakeModeEnabledSwitch need nothing here -
+    // they're LoggedDashboardChooser/LoggedNetworkNumber/LoggedNetworkBoolean,
+    // which read their live NT value automatically every loop.
   }
 }

@@ -23,7 +23,6 @@ from the tree on the left):
 | --- | --- | --- |
 | Text Display | `Counter` | - |
 | Large Text Display | `StatusMessage` | - |
-| Number Slider | `ShooterAngleDegrees` | Min 0, Max 45 |
 | Number Bar | `ClimberSpeed` | Range 0-1 |
 | Voltage View | `BatteryVoltage` | Default range (4-13) is fine |
 | Radial Gauge | `GyroHeadingDegrees` | Min/Max Value 0/360, Start/End Angle 0/360 |
@@ -39,23 +38,24 @@ automatically looks for the robot's pose at `Field2d/Robot`.
 ## Writing to the robot
 
 Every widget above only *displays* a value the robot code already computed.
-These five go the other way - you set them from Elastic, and the robot code
+These six go the other way - you set them from Elastic, and the robot code
 just reads whatever you last sent:
 
 | Widget | Bind to | Settings |
 | --- | --- | --- |
+| Number Slider | `ShooterAngleDegrees` | Min 0, Max 45 |
 | ComboBox Chooser | `AutoRoutine` | - |
 | Split Button Chooser | `AutoRoutine` | Same topic as the ComboBox Chooser - one chooser, two widgets |
-| Text Display | `AutoDelaySeconds` | Turn on Show Submit Button, so it publishes once you hit Enter instead of on every keystroke |
+| Text Display | `AutoDelaySeconds` | Turn on **Show Submit Button**, so it publishes once you hit Enter instead of on every keystroke - checked, not just suggested |
 | Toggle Button | `BrakeModeEnabledButton` | - |
 | Toggle Switch | `BrakeModeEnabledSwitch` | A separate topic from the Toggle Button, not shared this time |
 
-Try it live: pick a different option in the chooser, type a new number into
-`AutoDelaySeconds` and submit it, and click the brake mode toggle - each
-change reaches the robot over NetworkTables the same way a real driver
-station does before a match. There's nothing to arm first, unlike
-AdvantageScope's Tuning Mode: any widget bound to a plain writable topic
-accepts input as soon as it's on the grid.
+Try it live: drag the shooter angle slider, pick a different option in the
+chooser, type a new number into `AutoDelaySeconds` and submit it, and click
+the brake mode toggle - each change reaches the robot over NetworkTables the
+same way a real driver station does before a match. There's nothing to arm
+first, unlike AdvantageScope's Tuning Mode: any widget bound to a plain
+writable topic accepts input as soon as it's on the grid.
 
 Elastic doesn't always autosave right away - use **File > Save** before
 clicking Verify, or your latest changes won't be there yet.
@@ -73,10 +73,12 @@ Click **Checkpoints** in the top bar and run **Verify** whenever you want.
 Most checkpoints here look at whatever you last saved in your Elastic layout
 (see the note above), so they work any time, robot running or not. For the
 Number Slider, Radial Gauge, Graph, and Match Time widgets, the checkpoint
-also checks the range/threshold settings from the table above, not just
-which topic the widget is bound to.
+also checks the range/threshold settings from the table above; for the Text
+Display bound to `AutoDelaySeconds`, it also checks Show Submit Button is on
+- not just which topic each widget is bound to.
 
-The two brake mode checkpoints are different: they check the *live* NT4
-value, not the saved layout, so the robot needs to be running and you need
-to have actually clicked the widget at least once - just adding it to the
-grid isn't enough.
+Five checkpoints are different: **Shooter angle live write**, **Auto routine
+live pick**, **Auto delay live submit**, and the two brake mode checkpoints
+check the *live* NT4 value, not the saved layout. The robot needs to be
+running and you need to have actually moved the widget at least once - just
+adding it to the grid isn't enough.
