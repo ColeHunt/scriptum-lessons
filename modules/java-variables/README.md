@@ -55,6 +55,15 @@ For example, the `int` row means: declare an `int` set to `4143`, then print
 `System.out.println("Team number: " + yourVariableName);`. Do the same for
 the other three rows.
 
+:::warning[Match the printed format exactly]
+
+The checkpoint looks for the exact text `key: value` — the printed key, a
+colon, one space, then the value. `Team number:4143` (missing the space) or
+`team number: 4143` (wrong capitalization) won't match, even though they
+print basically the same information.
+
+:::
+
 The constants and enums below are different — the checkpoints look these up
 by name via reflection, so fill them in exactly as named:
 
