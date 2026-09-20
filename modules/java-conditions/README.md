@@ -35,6 +35,11 @@ full picture in the **Methods** lesson later.
   switch's `default` case).
 - `boolean canEnable(boolean hasComms, boolean eStopped)` — `true` only when
   there's comms **and** the robot is not e-stopped. Use `&&` and `!`.
+- `boolean isWeekend(String day)` — `true` when `day` is `"Saturday"` **or**
+  `"Sunday"`. Use `||`.
+- `String motorDirection(boolean isReversed)` — `"REVERSED"` or `"FORWARD"`.
+  Use the ternary operator (`condition ? ifTrue : ifFalse`) instead of an
+  `if`/`else`.
 
 ## Checking your work
 

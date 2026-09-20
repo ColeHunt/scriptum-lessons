@@ -21,9 +21,23 @@ public class Main {
         return false;
     }
 
+    // TODO: return whether day is "Saturday" OR "Sunday". Use ||.
+    public static boolean isWeekend(String day) {
+        return false;
+    }
+
+    // TODO: return "REVERSED" if isReversed is true, "FORWARD" otherwise.
+    // Use the ternary operator (condition ? ifTrue : ifFalse) instead of an
+    // if/else - one line, no braces.
+    public static String motorDirection(boolean isReversed) {
+        return null;
+    }
+
     public static void main(String[] args) {
         System.out.println("Battery at 75%: " + batteryStatus(75));
         System.out.println("Day 4: " + dayName(4));
         System.out.println("Can enable (comms, not e-stopped)? " + canEnable(true, false));
+        System.out.println("Is Saturday a weekend? " + isWeekend("Saturday"));
+        System.out.println("Motor direction (reversed): " + motorDirection(true));
     }
 }

@@ -33,6 +33,24 @@
 				"type": "script",
 				"path": "checkpoints/java-conditions/verify/can-enable.sh"
 			}
+		},
+		{
+			"id": "is-weekend",
+			"title": "Is weekend",
+			"description": "isWeekend(day) uses || to check for Saturday or Sunday.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-conditions/verify/is-weekend.sh"
+			}
+		},
+		{
+			"id": "motor-direction",
+			"title": "Motor direction",
+			"description": "motorDirection(isReversed) uses the ternary operator.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-conditions/verify/motor-direction.sh"
+			}
 		}
 	]
 }
