@@ -24,6 +24,15 @@
 				"type": "script",
 				"path": "checkpoints/java-loops/verify/count-divisible-by-three.sh"
 			}
+		},
+		{
+			"id": "fizz-buzz",
+			"title": "FizzBuzz",
+			"description": "fizzBuzz(n) is the classic FizzBuzz exercise, built with a for loop.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-loops/verify/fizz-buzz.sh"
+			}
 		}
 	]
 }

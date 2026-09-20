@@ -42,6 +42,15 @@
 				"type": "script",
 				"path": "checkpoints/java-arrays/verify/array-contains.sh"
 			}
+		},
+		{
+			"id": "array-fibonacci",
+			"title": "Fibonacci sequence",
+			"description": "fibonacci(n) builds the first n Fibonacci numbers into a new array.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-arrays/verify/array-fibonacci.sh"
+			}
 		}
 	]
 }

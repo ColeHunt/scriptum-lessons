@@ -1,6 +1,6 @@
 # Loops
 
-Background: [Loops](https://frc-team-4143.github.io/docs/software/java/loops).
+Background: [Loops](https://docs.marswars.org/docs/software/java/loops).
 
 All the code lives in `src/Main.java`. Click **Run** any time to see your
 methods' output printed to the terminal.
@@ -35,6 +35,9 @@ full picture in the **Methods** lesson later.
   computed with a `for` loop (not the shortcut formula).
 - `int countDivisibleByThree(int n)` — how many integers from 1 to `n`
   (inclusive) are evenly divisible by 3.
+- `String[] fizzBuzz(int n)` — the classic FizzBuzz exercise: for each number
+  1 to `n`, `"FizzBuzz"` if divisible by 3 and 5, `"Fizz"` if just by 3,
+  `"Buzz"` if just by 5, otherwise the number itself as a string.
 
 ## Checking your work
 

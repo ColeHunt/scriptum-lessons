@@ -20,11 +20,21 @@ public class Main {
         return false;
     }
 
+    // TODO: return the first n numbers of the Fibonacci sequence, as a new
+    // array: each number is the sum of the two before it, starting
+    // 0, 1, 1, 2, 3, 5, 8, 13, ... Build the array with a loop - don't
+    // hardcode the values. Unlike the methods above, you're building a new
+    // array from scratch here, not transforming one you were given.
+    public static int[] fibonacci(int n) {
+        return new int[0];
+    }
+
     public static void main(String[] args) {
         int[] sample = {4, 1, 4, 3, 9};
         System.out.println("Max: " + max(sample));
         System.out.println("Average: " + average(sample));
         System.out.println("Doubled: " + java.util.Arrays.toString(doubleAll(sample)));
         System.out.println("Contains 9? " + contains(sample, 9));
+        System.out.println("First 8 Fibonacci: " + java.util.Arrays.toString(fibonacci(8)));
     }
 }

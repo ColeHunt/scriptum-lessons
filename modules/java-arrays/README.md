@@ -1,6 +1,6 @@
 # Arrays
 
-Background: [Arrays and ArrayLists](https://frc-team-4143.github.io/docs/software/java/arrays).
+Background: [Arrays and ArrayLists](https://docs.marswars.org/docs/software/java/arrays).
 
 All the code lives in `src/Main.java`. Click **Run** any time to see your
 methods' output printed to the terminal.
@@ -33,6 +33,8 @@ full picture in the **Methods** lesson later.
   Don't modify the array you were given.
 - `boolean contains(int[] values, int target)` — whether `target` appears
   anywhere in `values`.
+- `int[] fibonacci(int n)` — the first `n` Fibonacci numbers as a **new**
+  array (`0, 1, 1, 2, 3, 5, 8, ...`), built with a loop.
 
 ## Checking your work
 
