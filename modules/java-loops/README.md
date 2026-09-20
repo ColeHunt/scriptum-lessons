@@ -9,6 +9,26 @@ Team standard: avoid `while` loops (they're dangerous in robot code — one
 missed exit condition and the robot stops responding). Use `for` loops
 instead, which force you to think about the exit condition up front.
 
+:::note[Just enough about methods for now]
+
+You haven't learned methods yet - that's its own lesson later. For now, all
+you need is this: a method is a small box with a name. The words in its
+parentheses are **parameters** - values handed to you, which you can use
+like any other variable. `return` is how the method sends its answer back
+out. For example:
+
+```java
+public static int square(int n) {
+    return n * n;
+}
+```
+
+Calling `square(5)` runs that code with `n` set to `5`, and hands back
+`25`. That's it - fill in the methods below the same way. You'll get the
+full picture in the **Methods** lesson later.
+
+:::
+
 ## Contract
 
 - `int sumTo(int n)` — the sum of every integer from 1 to `n` (inclusive),
