@@ -38,6 +38,25 @@ full picture in the **Methods** lesson later.
   assignment operator in order and return the final value:
   `x = start;` → `x += 1;` → `x -= 0.14;` → `x *= 6;` → `x /= 3;`
 
+:::note[Just enough about comparisons for now]
+
+`isEven` needs one more thing you haven't formally learned yet: `==`
+compares two values and evaluates directly to a `boolean` — `true` or
+`false` — the same way `%` evaluates to a number. You don't need an `if`
+statement at all:
+
+```java
+public static boolean isPositive(int n) {
+    return n > 0;
+}
+```
+
+`value % 2 == 0` works the same way — one full expression, not two separate
+steps. Comparisons (`==`, `!=`, `<`, `>`, and friends) get their own lesson
+soon, in **Conditions**.
+
+:::
+
 ## Checking your work
 
 Click **Checkpoints** in the top bar and run **Verify** whenever you want.
