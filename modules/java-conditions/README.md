@@ -1,6 +1,6 @@
 # Conditions
 
-Background: [Conditions](https://frc-team-4143.github.io/docs/software/java/conditions).
+Background: [Conditions](https://docs.marswars.org/docs/software/java/conditions).
 
 All the code lives in `src/Main.java`. Click **Run** any time to see your
 methods' output printed to the terminal.
@@ -33,6 +33,8 @@ full picture in the **Methods** lesson later.
 - `String dayName(int day)` — `"Monday"` through `"Sunday"` for `day` 1–7,
   using a `switch` statement. Return `"Invalid day"` for anything else (the
   switch's `default` case).
+- `boolean canEnable(boolean hasComms, boolean eStopped)` — `true` only when
+  there's comms **and** the robot is not e-stopped. Use `&&` and `!`.
 
 ## Checking your work
 

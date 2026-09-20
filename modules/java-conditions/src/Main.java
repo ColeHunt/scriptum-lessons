@@ -15,8 +15,15 @@ public class Main {
         return null;
     }
 
+    // TODO: return whether the robot can enable - true only when there's
+    // comms AND the robot is not e-stopped. Use && and !.
+    public static boolean canEnable(boolean hasComms, boolean eStopped) {
+        return false;
+    }
+
     public static void main(String[] args) {
         System.out.println("Battery at 75%: " + batteryStatus(75));
         System.out.println("Day 4: " + dayName(4));
+        System.out.println("Can enable (comms, not e-stopped)? " + canEnable(true, false));
     }
 }

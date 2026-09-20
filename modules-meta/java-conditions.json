@@ -24,6 +24,15 @@
 				"type": "script",
 				"path": "checkpoints/java-conditions/verify/day-name.sh"
 			}
+		},
+		{
+			"id": "can-enable",
+			"title": "Can enable",
+			"description": "canEnable(hasComms, eStopped) combines conditions with && and !.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-conditions/verify/can-enable.sh"
+			}
 		}
 	]
 }
