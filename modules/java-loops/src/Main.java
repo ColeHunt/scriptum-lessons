@@ -11,19 +11,20 @@ public class Main {
         return 0;
     }
 
-    // TODO: the classic "FizzBuzz" exercise. Return an array of n strings,
-    // one per number from 1 to n (inclusive):
+    // TODO: the classic "FizzBuzz" exercise. Build one comma-separated
+    // string covering every number from 1 to n (inclusive):
     //   divisible by 3 AND 5 -> "FizzBuzz"
     //   divisible by 3 only  -> "Fizz"
     //   divisible by 5 only  -> "Buzz"
     //   otherwise            -> the number itself, as a string (e.g. "7")
-    public static String[] fizzBuzz(int n) {
-        return new String[0];
+    // e.g. fizzBuzz(5) -> "1, 2, Fizz, 4, Buzz"
+    public static String fizzBuzz(int n) {
+        return "";
     }
 
     public static void main(String[] args) {
         System.out.println("Sum to 5: " + sumTo(5));
         System.out.println("Divisible by 3 up to 12: " + countDivisibleByThree(12));
-        System.out.println("FizzBuzz to 15: " + java.util.Arrays.toString(fizzBuzz(15)));
+        System.out.println("FizzBuzz to 15: " + fizzBuzz(15));
     }
 }

@@ -35,9 +35,10 @@ full picture in the **Methods** lesson later.
   computed with a `for` loop (not the shortcut formula).
 - `int countDivisibleByThree(int n)` — how many integers from 1 to `n`
   (inclusive) are evenly divisible by 3.
-- `String[] fizzBuzz(int n)` — the classic FizzBuzz exercise: for each number
-  1 to `n`, `"FizzBuzz"` if divisible by 3 and 5, `"Fizz"` if just by 3,
-  `"Buzz"` if just by 5, otherwise the number itself as a string.
+- `String fizzBuzz(int n)` — the classic FizzBuzz exercise: one
+  comma-separated string covering 1 to `n`, with `"FizzBuzz"` for numbers
+  divisible by 3 and 5, `"Fizz"` for just 3, `"Buzz"` for just 5, and the
+  number itself otherwise (e.g. `fizzBuzz(5)` -> `"1, 2, Fizz, 4, Buzz"`).
 
 ## Checking your work
 
