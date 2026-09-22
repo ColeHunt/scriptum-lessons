@@ -62,6 +62,16 @@
 			"track": "Java Basics"
 		},
 		{
+			"id": "java-recursion",
+			"order": 18,
+			"track": "Bonus"
+		},
+		{
+			"id": "java-inheritance",
+			"order": 19,
+			"track": "Bonus"
+		},
+		{
 			"id": "robot-starter",
 			"order": 20,
 			"track": "FRC Robot"
