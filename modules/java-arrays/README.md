@@ -33,6 +33,8 @@ full picture in the **Methods** lesson later.
   Don't modify the array you were given.
 - `boolean contains(int[] values, int target)` — whether `target` appears
   anywhere in `values`.
+- `int[] sort(int[] values)` — a **new** array with every value sorted in
+  ascending order. Don't modify the array you were given.
 - `int[] fibonacci(int n)` — the first `n` Fibonacci numbers as a **new**
   array (`0, 1, 1, 2, 3, 5, 8, ...`), built with a loop.
 

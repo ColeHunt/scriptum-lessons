@@ -44,6 +44,15 @@
 			}
 		},
 		{
+			"id": "array-sort",
+			"title": "Sort an array",
+			"description": "sort(values) returns a new ascending-sorted array without mutating the input.",
+			"verifier": {
+				"type": "script",
+				"path": "checkpoints/java-arrays/verify/array-sort.sh"
+			}
+		},
+		{
 			"id": "array-fibonacci",
 			"title": "Fibonacci sequence",
 			"description": "fibonacci(n) builds the first n Fibonacci numbers into a new array.",

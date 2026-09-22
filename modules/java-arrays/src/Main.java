@@ -20,6 +20,13 @@ public class Main {
         return false;
     }
 
+    // TODO: return a NEW array with every value from `values`, sorted in
+    // ascending order. Don't modify the array that was passed in - same
+    // rule as doubleAll above.
+    public static int[] sort(int[] values) {
+        return null;
+    }
+
     // TODO: return the first n numbers of the Fibonacci sequence, as a new
     // array: each number is the sum of the two before it, starting
     // 0, 1, 1, 2, 3, 5, 8, 13, ... Build the array with a loop - don't
@@ -35,6 +42,7 @@ public class Main {
         System.out.println("Average: " + average(sample));
         System.out.println("Doubled: " + java.util.Arrays.toString(doubleAll(sample)));
         System.out.println("Contains 9? " + contains(sample, 9));
+        System.out.println("Sorted: " + java.util.Arrays.toString(sort(sample)));
         System.out.println("First 8 Fibonacci: " + java.util.Arrays.toString(fibonacci(8)));
     }
 }
