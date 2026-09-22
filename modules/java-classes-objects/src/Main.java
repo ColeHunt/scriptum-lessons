@@ -1,15 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        MotorController left_shooter_motor = new MotorController(false);
-        MotorController right_shooter_motor = new MotorController(true);
+        BankAccount checking = new BankAccount("Alex", 100.0);
+        BankAccount savings = new BankAccount("Alex", 50.0);
 
-        left_shooter_motor.enableMotor();
-        right_shooter_motor.enableMotor();
+        checking.deposit(25.0);
+        checking.withdraw(10.0);
+        checking.transfer(savings, 40.0);
 
-        left_shooter_motor.setMotorSpeed(1.0);
-        right_shooter_motor.setMotorSpeed(1.0);
-
-        System.out.println("Left speed: " + left_shooter_motor.getMotorSpeed());
-        System.out.println("Right speed: " + right_shooter_motor.getMotorSpeed());
+        System.out.println("Checking balance: " + checking.getBalance());
+        System.out.println("Savings balance: " + savings.getBalance());
     }
 }
