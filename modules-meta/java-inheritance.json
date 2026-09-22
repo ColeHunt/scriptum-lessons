@@ -1,6 +1,6 @@
 {
 	"title": "Inheritance",
-	"description": "Optional: extend the BankAccount class from Classes & Objects with two subclasses - one that adds a new method, one that overrides an existing one.",
+	"description": "Extend the BankAccount class from Classes & Objects with two subclasses - one that adds a new method, one that overrides an existing one.",
 	"subdir": "modules/java-inheritance",
 	"kind": "plain-java",
 	"requires": [

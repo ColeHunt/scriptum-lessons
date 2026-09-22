@@ -1,6 +1,6 @@
 {
 	"title": "Recursion",
-	"description": "Optional: solve a few problems you already solved with loops, using recursion instead - methods that call themselves down to a base case.",
+	"description": "Solve a few problems you already solved with loops, using recursion instead - methods that call themselves down to a base case.",
 	"subdir": "modules/java-recursion",
 	"kind": "plain-java",
 	"requires": [

@@ -1,8 +1,7 @@
-# Recursion (Bonus)
+# Recursion
 
-This one's optional - it's not required to move on to the FRC Robot track.
-It's here because recursion is a fundamental tool worth seeing at least
-once, even though robot code rarely uses it directly.
+Recursion is a fundamental tool worth seeing at least once, even though
+robot code rarely uses it directly.
 
 All the code lives in `src/Main.java`. No method bodies are given - same
 as the Methods lesson, you write the full declaration yourself. `main` is

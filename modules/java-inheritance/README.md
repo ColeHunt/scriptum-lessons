@@ -1,6 +1,4 @@
-# Inheritance (Bonus)
-
-This one's optional - it's not required to move on to the FRC Robot track.
+# Inheritance
 
 This lesson extends the `BankAccount` class you built in Classes & Objects
 - it's given to you complete in `src/BankAccount.java` this time, because
